@@ -1,5 +1,5 @@
 
-# dog-find
+# The Dog Finder
 
 This is a simple web application that allows a user to collect cute pictures of dogs, building and managing their own personal collection.
 
@@ -7,22 +7,24 @@ This program makes use of the Dog API (https://dog.ceo/dog-api/) to provide vari
 
 ## Table of Contents
 - [Prerequisities](#prerequisities)
-- [Tech Stack](#techstack)
-- [Installing for local development](#install)
+- [Tech Stack](#tech-stack)
+- [Installing for local development](#installing-for-local-development)
 - [Testing](#testing)
 
 ### Prerequisites
 You must have the following installed to run this application.
-Ruby v3~
-Rails v6~
-PostgreSQL
-NodeJS
-yarn
+
+* Ruby v3~
+* Rails v6~
+* PostgreSQL
+* NodeJS
+* yarn
 
 ### Tech Stack
-Ruby on Rails (Back-end)
-VueJS (Front-end)
-PostgreSQL (Database)
+
+* Ruby on Rails (Back-end)
+* VueJS (Front-end)
+* PostgreSQL (Database)
 
 ### Installing for local development
 
@@ -79,6 +81,11 @@ rails server
 Then start the Front-end dev server with:
 ```
 bin/webpack-dev-server
+```
+
+4. You're all done! You can now access the application at the following url:
+```
+http://localhost:3000
 ```
 
 ### Testing
