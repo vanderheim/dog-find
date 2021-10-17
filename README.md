@@ -1,28 +1,94 @@
-<<<<<<< HEAD
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-=======
 # dog-find
->>>>>>> ec446b8d46076bc9395a8bc8be327b7597109a9a
+
+This is a simple web application that allows a user to collect cute pictures of dogs, building and managing their own personal collection.
+
+This program makes use of the Dog API (https://dog.ceo/dog-api/) to provide various images of dogs.
+
+## Table of Contents
+- [Prerequisities](#prerequisities)
+- [Tech Stack](#techstack)
+- [Installing for local development](#install)
+- [Testing](#testing)
+
+### Prerequisites
+You must have the following installed to run this application.
+Ruby v3~
+Rails v6~
+PostgreSQL
+NodeJS
+yarn
+
+### Tech Stack
+Ruby on Rails (Back-end)
+VueJS (Front-end)
+PostgreSQL (Database)
+
+### Installing for local development
+
+1. Clone the repository.
+```
+git clone https://github.com/vanderheim/dog-find.git
+```
+
+2. cd into the directory and install all the libraries that are required by the program.
+
+For the Ruby On Rails Back-end, you must run:
+```
+bundle install
+```
+
+For the VueJS Front-end, you must run:
+```
+yarn install
+```
+
+3. Fill out the necessary information to connect to your PostgreSQL database.
+
+Edit config/database.yml and replace the username and password to access your local database.
+```
+development:
+  <<: *default
+  database: myapp_development
+  username: 'YOUR_USERNAME_HERE'
+  password: 'YOUR_PASSWORD_HERE'
+```
+
+NOTE: If you would like to run the tests for the application, fill in the username and password sections in the test block as well.
+```
+test:
+  <<: *default
+  database: myapp_test
+  username: 'YOUR_USERNAME_HERE'
+  password: 'YOUR_PASSWORD_HERE'
+```
+
+After setting up your configuration details, provision the database with the following command:
+```
+rake db:setup
+```
+
+3. Run the application.
+
+Start the Rails server with:
+
+```
+rails server
+```
+
+Then start the Front-end dev server with:
+```
+bin/webpack-dev-server
+```
+
+### Testing
+
+There have been several unit tests for this application for both the Front-end and the Back-end. 
+The test suite used for the server is Rspec, while the suite used for the client is Jest.
+
+Run the following command to test the application:
+```
+yarn test
+```
+
+This will run both test suites for Rspec and Jest.
