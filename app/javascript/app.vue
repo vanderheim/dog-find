@@ -9,7 +9,6 @@
                     <font-awesome-icon :icon="['fas', 'dog']" /> The Dog Finder
                 </h2>
             </v-toolbar-title>
-            <!-- -->
 
             <template v-slot:extension>
                 <v-tabs align-with-title>
@@ -23,7 +22,6 @@
             <v-btn href='https://github.com/vanderheim/dog-find' icon>
                 <v-icon>mdi-github</v-icon>
             </v-btn>
-
         </v-app-bar>
 
         <v-main>
@@ -33,11 +31,10 @@
         </v-main>
 
         <v-footer app padless>
-
             <v-col class="text-center" cols="12">
                 <v-card flat tile class="indigo lighten-1 white--text text-center">
                     <v-card-text class="white--text">
-                        {{ new Date().getFullYear() }} — <strong>The Dog Finder</strong>
+                        {{ new Date().getFullYear() }} — <router-link to='/'><strong>The Dog Finder</strong></router-link>
                     </v-card-text>
                 </v-card>
             </v-col>
@@ -51,11 +48,7 @@
 export default {
     name: 'App',
     data: function () {
-        return {
-            icons: [
-                'mdi-github',
-            ],
-        };
+        return {};
     },
     components: {}
 };

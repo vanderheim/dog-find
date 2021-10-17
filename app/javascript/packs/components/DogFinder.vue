@@ -1,6 +1,7 @@
 <template>
 <v-card :loading="loading" class="mx-auto my-12" max-width="600">
 
+    <!-- Loading bar -->
     <template slot="progress">
       <v-progress-linear
         color="indigo lighten-3"
@@ -9,6 +10,7 @@
       ></v-progress-linear>
     </template>
 
+    <!-- Main dog UI -->
     <v-img aspect-ratio="1" :height="height" :src='dog.message' />
 
     <v-card-text class="text-center">
@@ -21,7 +23,7 @@
             </v-btn>
         </v-snackbar>
 
-        <v-btn x-large color="success" @click="save(dog.message)">
+        <v-btn x-large color="success" @click="saveDog(dog.message)">
             LOVE IT!
         </v-btn>
         <v-btn x-large color="error" @click="fetchDog">
@@ -34,7 +36,9 @@
 
 <script>
 import axios from "axios";
+
 export default {
+
     data: () => ({
         createdNotification: false,
         loading: false,
@@ -42,6 +46,8 @@ export default {
     }),
 
     computed: {
+
+        // Computed property to handle main dog image scaling per device breakpoint
         height() {
             switch (this.$vuetify.breakpoint.name) {
                 case 'xs': return 250
@@ -52,7 +58,7 @@ export default {
             }
         }
     },
-    
+
     created() {
         this.initialize();
     },
@@ -60,32 +66,28 @@ export default {
     methods: {
 
         fetchDog() {
-
             this.loading = true;
 
             return axios
                 .get("https://dog.ceo/api/breed/maltese/images/random")
                 .then(response => {
-                    console.log(response.data);
                     this.dog = response.data;
                     this.loading = false;
                 })
                 .catch(e => {
                     console.log(e);
                 });
-
         },
 
         initialize() {
             this.fetchDog();
         },
 
-        save(item) {
+        saveDog(url) {
             this.createdNotification = true;
-            console.log(item);
 
             const dog = {
-                url: item
+                url: url
             };
 
             axios
@@ -103,6 +105,7 @@ export default {
         close() {
             this.dialog = false;
         }
+
     }
 };
 </script>

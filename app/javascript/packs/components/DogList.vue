@@ -1,17 +1,21 @@
 <template>
 <v-container>
 
+    <!-- Now Loading Block -->
     <v-row v-if='loading' class="text-center d-flex flex-column" align='center' justify='center'>
         <v-progress-circular color="indigo lighten-3" :size="70" :width="10" indeterminate></v-progress-circular>
         <br>
         <h3>Letting the dogs out...</h3>
     </v-row>
 
+    <!-- Empty Collection Block -->
     <v-row v-if='dogs && dogs.length === 0' class="text-center d-flex flex-column" align='center' justify='center'>
         <h1>No dogs found!</h1>
-        <p>It doesn't seem like you have any dogs in your collection. <router-link to='/find'>How about adding some?</router-link></p>
+        <p>It doesn't seem like you have any dogs in your collection. <router-link to='/find'>How about adding some?</router-link>
+        </p>
     </v-row>
 
+    <!-- Main Dog List -->
     <v-row v-else>
         <v-col v-for="dog in dogs" :key="dog.id" class="d-flex child-flex" cols="3">
             <v-dialog v-model="dialog" :retain-focus="false" max-width="500px">
@@ -49,9 +53,10 @@
 
             </v-dialog>
         </v-col>
-        <v-snackbar v-model="removeNotification" color='pink'>
-            You just deleted a dog from your collection. Don't worry, all dogs go to heaven!
 
+        <!-- Delete notification -->
+        <v-snackbar v-model="removeNotification" color='red'>
+            You just deleted a dog from your collection. Don't worry, all dogs go to heaven!
             <v-btn outlined text @click="removeNotification = false">
                 CLOSE
             </v-btn>
@@ -62,7 +67,9 @@
 
 <script>
 import axios from "axios";
+
 export default {
+
     data: () => ({
         removeNotification: false,
         loading: false,
@@ -70,9 +77,11 @@ export default {
         currentDog: {},
         dogs: null
     }),
+
     created() {
         this.initialize();
     },
+
     methods: {
         initialize() {
 
@@ -81,7 +90,6 @@ export default {
             return axios
                 .get("/dogs")
                 .then(response => {
-                    console.log('dogs list', response.data);
                     this.dogs = response.data;
                     this.loading = false;
                 })
@@ -90,10 +98,12 @@ export default {
                 });
 
         },
+
         viewDog(dog) {
             this.dialog = true;
             this.currentDog = dog;
         },
+
         deleteDog(dog) {
             axios
                 .delete(`/dogs/${dog.id}`)
@@ -106,6 +116,7 @@ export default {
                     console.log(error);
                 });
         },
+
         close() {
             this.dialog = false;
         }
