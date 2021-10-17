@@ -9,7 +9,7 @@
       ></v-progress-linear>
     </template>
 
-    <v-img aspect-ratio="1" height="600" :src='dog.message' />
+    <v-img aspect-ratio="1" :height="height" :src='dog.message' />
 
     <v-card-text class="text-center">
 
@@ -41,6 +41,18 @@ export default {
         dog: {}
     }),
 
+    computed: {
+        height() {
+            switch (this.$vuetify.breakpoint.name) {
+                case 'xs': return 250
+                case 'sm': return 400
+                case 'md': return 500
+                case 'lg': return 550
+                case 'xl': return 600
+            }
+        }
+    },
+    
     created() {
         this.initialize();
     },
