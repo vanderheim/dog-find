@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DogList should match snapshot 1`] = `
+<div class="container grey lighten-5">
+  <div class="row">
+    <div class="v-snack v-snack--bottom v-snack--has-background" style="padding-bottom: 0px; padding-top: 0px;">
+      <transition-stub name="v-snack-transition">
+        <div class="v-snack__wrapper v-sheet theme--dark pink" style="display: none;">
+          <div role="status" aria-live="polite" class="v-snack__content">
+            You just deleted a dog from your collection. Don't worry, all dogs go to heaven!
+
+            <button type="button" class="v-btn v-btn--outlined v-btn--text theme--dark v-size--default"><span class="v-btn__content">
+                    CLOSE
+                </span></button>
+          </div>
+          <div class="v-snack__action "></div>
+        </div>
+      </transition-stub>
+    </div>
+  </div>
+</div>
+`;
