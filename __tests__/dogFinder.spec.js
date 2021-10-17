@@ -42,9 +42,4 @@ describe('DogFinder', () => {
         expect(wrapper.vm.dog[0].message).toBe('success.jpg');
     });
 
-    it('should match snapshot', () => {
-        const wrapper = mountFunction();
-    
-        expect(wrapper.html()).toMatchSnapshot()
-      });
 })

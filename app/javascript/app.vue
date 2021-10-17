@@ -20,7 +20,7 @@
             </template>
             <v-spacer></v-spacer>
 
-            <v-btn href='https://github.com/vanderheim/dog-finder' icon>
+            <v-btn href='https://github.com/vanderheim/dog-find' icon>
                 <v-icon>mdi-github</v-icon>
             </v-btn>
 

@@ -46,9 +46,4 @@ describe('DogList', () => {
         expect(wrapper.vm.dogs.length).toBe(5);
     });
 
-    it('should match snapshot', () => {
-        const wrapper = mountFunction();
-
-        expect(wrapper.html()).toMatchSnapshot()
-    });
 })

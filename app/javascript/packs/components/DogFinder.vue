@@ -1,16 +1,24 @@
 <template>
-<v-card class="mx-auto my-12" max-width="600">
-    <v-img aspect-ratio="1" height="600" :src='dog.message' />
+<v-card :loading="loading" class="mx-auto my-12" max-width="600">
 
+    <template slot="progress">
+      <v-progress-linear
+        color="indigo lighten-3"
+        height="10"
+        indeterminate
+      ></v-progress-linear>
+    </template>
+
+    <v-img aspect-ratio="1" height="600" :src='dog.message' />
 
     <v-card-text class="text-center">
 
         <v-snackbar v-model="createdNotification" color='success'>
             You just added a new dog to your collection!
 
-                <v-btn outlined text @click="createdNotification = false">
-                    CLOSE
-                </v-btn>
+            <v-btn outlined text @click="createdNotification = false">
+                CLOSE
+            </v-btn>
         </v-snackbar>
 
         <v-btn x-large color="success" @click="save(dog.message)">
@@ -29,6 +37,7 @@ import axios from "axios";
 export default {
     data: () => ({
         createdNotification: false,
+        loading: false,
         dog: {}
     }),
 
@@ -39,27 +48,24 @@ export default {
     methods: {
 
         fetchDog() {
+
+            this.loading = true;
+
             return axios
                 .get("https://dog.ceo/api/breed/maltese/images/random")
                 .then(response => {
                     console.log(response.data);
                     this.dog = response.data;
+                    this.loading = false;
                 })
                 .catch(e => {
                     console.log(e);
                 });
+
         },
 
         initialize() {
-            return axios
-                .get("https://dog.ceo/api/breed/maltese/images/random")
-                .then(response => {
-                    console.log(response.data);
-                    this.dog = response.data;
-                })
-                .catch(e => {
-                    console.log(e);
-                });
+            this.fetchDog();
         },
 
         save(item) {

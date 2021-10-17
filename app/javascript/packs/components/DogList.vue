@@ -1,6 +1,18 @@
 <template>
-<v-container class="grey lighten-5">
-    <v-row>
+<v-container>
+
+    <v-row v-if='loading' class="text-center d-flex flex-column" align='center' justify='center'>
+        <v-progress-circular color="indigo lighten-3" :size="70" :width="10" indeterminate></v-progress-circular>
+        <br>
+        <h3>Letting the dogs out...</h3>
+    </v-row>
+
+    <v-row v-if='dogs && dogs.length === 0' class="text-center d-flex flex-column" align='center' justify='center'>
+        <h1>No dogs found!</h1>
+        <p>It doesn't seem like you have any dogs in your collection. <router-link to='/find'>How about adding some?</router-link></p>
+    </v-row>
+
+    <v-row v-else>
         <v-col v-for="dog in dogs" :key="dog.id" class="d-flex child-flex" cols="3">
             <v-dialog v-model="dialog" :retain-focus="false" max-width="500px">
 
@@ -40,9 +52,9 @@
         <v-snackbar v-model="removeNotification" color='pink'>
             You just deleted a dog from your collection. Don't worry, all dogs go to heaven!
 
-                <v-btn outlined text @click="removeNotification = false">
-                    CLOSE
-                </v-btn>
+            <v-btn outlined text @click="removeNotification = false">
+                CLOSE
+            </v-btn>
         </v-snackbar>
     </v-row>
 </v-container>
@@ -53,24 +65,30 @@ import axios from "axios";
 export default {
     data: () => ({
         removeNotification: false,
+        loading: false,
         dialog: false,
         currentDog: {},
-        dogs: []
+        dogs: null
     }),
     created() {
         this.initialize();
     },
     methods: {
         initialize() {
+
+            this.loading = true;
+
             return axios
                 .get("/dogs")
                 .then(response => {
                     console.log('dogs list', response.data);
                     this.dogs = response.data;
+                    this.loading = false;
                 })
                 .catch(e => {
                     console.log(e);
                 });
+
         },
         viewDog(dog) {
             this.dialog = true;
@@ -97,7 +115,7 @@ export default {
 
 <style scoped>
 .remove-text {
-  color: red;
-  font-weight: bold;
+    color: red;
+    font-weight: bold;
 }
 </style>
