@@ -1,7 +1,7 @@
 
 # The Dog Finder
 
-This is a simple web application that allows a user to collect cute pictures of dogs, building and managing their own personal collection.
+This is a simple web application that allows a user to build and manage their own personal collection of cute dogs!
 
 This program makes use of the Dog API (https://dog.ceo/dog-api/) to provide various images of dogs.
 
