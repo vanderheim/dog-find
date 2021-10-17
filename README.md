@@ -93,6 +93,8 @@ http://localhost:3000
 There are several unit tests for this application for both the Front-end and the Back-end. 
 The test suite used for the server is Rspec, while the suite used for the client is Jest.
 
+Jest tests can be found in the __tests__ folder, while Rspec tests can be found in the spec folder.
+
 Run the following command to test the application:
 ```
 yarn test
