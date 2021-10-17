@@ -90,7 +90,7 @@ http://localhost:3000
 
 ### Testing
 
-There have been several unit tests for this application for both the Front-end and the Back-end. 
+There are several unit tests for this application for both the Front-end and the Back-end. 
 The test suite used for the server is Rspec, while the suite used for the client is Jest.
 
 Run the following command to test the application:
