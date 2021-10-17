@@ -6,10 +6,16 @@ This is a simple web application that allows a user to build and manage their ow
 This program makes use of the Dog API (https://dog.ceo/dog-api/) to provide various images of dogs.
 
 ## Table of Contents
+- [Live Demo](#live-demo)
 - [Prerequisities](#prerequisities)
 - [Tech Stack](#tech-stack)
 - [Installing for local development](#installing-for-local-development)
 - [Testing](#testing)
+
+### Live Demo
+A live demo of this application has been deployed to Heroku. You can visit it at the follow url below:
+
+http://dog-find.herokuapp.com/
 
 ### Prerequisites
 You must have the following installed to run this application.
