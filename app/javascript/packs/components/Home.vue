@@ -14,6 +14,7 @@
 
             <strong>Ready to get started? Head on over to the <router-link to='/find'>Find</router-link> tab and start building your collection of furry friends now!</strong>
 
+            <p>This application is fully open-source and is available on <a href='http://github.com/vanderheim/dog-find'>Github</a>.</p>
         </v-col>
     </v-row>
 </v-container>

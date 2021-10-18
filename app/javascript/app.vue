@@ -30,7 +30,7 @@
             </v-container>
         </v-main>
 
-        <v-footer app padless>
+        <v-footer padless>
             <v-col class="text-center" cols="12">
                 <v-card flat tile class="indigo lighten-1 white--text text-center">
                     <v-card-text class="white--text">
