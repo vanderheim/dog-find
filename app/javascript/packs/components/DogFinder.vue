@@ -3,11 +3,7 @@
 
     <!-- Loading bar -->
     <template slot="progress">
-      <v-progress-linear
-        color="indigo lighten-3"
-        height="10"
-        indeterminate
-      ></v-progress-linear>
+        <v-progress-linear color="indigo lighten-3" height="10" indeterminate></v-progress-linear>
     </template>
 
     <!-- Main dog UI -->
@@ -50,11 +46,16 @@ export default {
         // Computed property to handle main dog image scaling per device breakpoint
         height() {
             switch (this.$vuetify.breakpoint.name) {
-                case 'xs': return 250
-                case 'sm': return 300
-                case 'md': return 400
-                case 'lg': return 400
-                case 'xl': return 500
+                case 'xs':
+                    return 250
+                case 'sm':
+                    return 300
+                case 'md':
+                    return 400
+                case 'lg':
+                    return 400
+                case 'xl':
+                    return 500
             }
         }
     },

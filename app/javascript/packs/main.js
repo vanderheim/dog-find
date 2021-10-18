@@ -6,24 +6,18 @@
 // All it does is render <div>Hello Vue</div> at the bottom of the page.
 
 import Vue from 'vue'
-import Vuetify from 'vuetify'
 import App from '../app.vue'
-import VueRouter from 'vue-router'
+
+// Font Awesome
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faDog } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-// Font Awesome
 library.add(faDog);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
+// Vue-Router
+import VueRouter from 'vue-router'
 Vue.use(VueRouter);
-Vue.use(Vuetify);
-
-// Components
-import DogFinder from "./components/DogFinder.vue";
-import DogList from "./components/DogList.vue";
-import Home from "./components/Home.vue";
 
 const routes = [
   { path: '/', component: Home },
@@ -36,6 +30,15 @@ const router = new VueRouter({
   routes // short for `routes: routes`
 });
 
+// Vuetify
+import Vuetify from 'vuetify'
+Vue.use(Vuetify);
+
+// Components
+import DogFinder from "./components/DogFinder.vue";
+import DogList from "./components/DogList.vue";
+import Home from "./components/Home.vue";
+
 document.addEventListener('DOMContentLoaded', () => {
   const app = new Vue({
     vuetify: new Vuetify(),
@@ -44,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }).$mount()
 
   document.body.appendChild(app.$el);
-
 });
 
 // The above code uses Vue without the compiler, which means you cannot
