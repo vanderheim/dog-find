@@ -12,11 +12,9 @@
             </p>
             <p>After adding some dogs to your collection, you can view it on the Collection tab. If you don't like one of the dogs in your collection, you can remove them by clicking on their picture.</p>
 
-            <h4>Ready to get started? Head on over to the <router-link to='/find'>Find</router-link> tab and start building your collection of furry friends now!</h4>
+            <strong>Ready to get started? Head on over to the <router-link to='/find'>Find</router-link> tab and start building your collection of furry friends now!</strong>
 
-            <h2>Want to contribute?</h2>
-            <p>This application is fully open-source and you are welcome to contribute to the codebase if you'd like.</p>
-            <p>The source is available on <a href='http://github.com/vanderheim/dog-find'>Github</a>.</p>
+            <p>The application is fully open-source and is available on <a href='http://github.com/vanderheim/dog-find'>Github</a>.</p>
         </v-col>
     </v-row>
 </v-container>
