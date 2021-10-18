@@ -13,7 +13,7 @@ This program makes use of the Dog API (https://dog.ceo/dog-api/) to provide vari
 - [Testing](#testing)
 
 ### Live Demo
-A live demo of this application has been deployed to Heroku. You can visit it at the follow url below:
+A live demo of this application has been deployed to Heroku. You can visit it at the url below:
 
 http://dog-find.herokuapp.com/
 

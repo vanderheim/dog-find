@@ -34,7 +34,7 @@
             <v-col class="text-center" cols="12">
                 <v-card flat tile class="indigo lighten-1 white--text text-center">
                     <v-card-text class="white--text">
-                        {{ new Date().getFullYear() }} — <router-link to='/'><strong>The Dog Finder</strong></router-link>
+                        {{ new Date().getFullYear() }} — <strong>The Dog Finder</strong>
                     </v-card-text>
                 </v-card>
             </v-col>
