@@ -1,7 +1,7 @@
 
 # The Dog Finder
 
-This is a simple web application that allows a user to build and manage their own personal collection of cute dogs!
+The Dog Finder is a web application that allows a user to build and manage their own personal collection of cute dogs!
 
 This program makes use of the Dog API (https://dog.ceo/dog-api/) to provide various images of dogs.
 
@@ -15,7 +15,7 @@ This program makes use of the Dog API (https://dog.ceo/dog-api/) to provide vari
 ### Live Demo
 A live demo of this application has been deployed to Heroku. You can visit it at the url below:
 
-http://dog-find.herokuapp.com/
+https://dog-find.herokuapp.com/
 
 ### Prerequisites
 You must have the following installed to run this application.
@@ -35,18 +35,21 @@ You must have the following installed to run this application.
 ### Installing for local development
 
 1. Clone the repository.
+
 ```
 git clone https://github.com/vanderheim/dog-find.git
 ```
 
-2. cd into the directory and install all the libraries that are required by the program.
+2. cd into the directory and install all the libraries that are required by the application.
 
 For the Ruby On Rails Back-end, you must run:
+
 ```
 bundle install
 ```
 
 For the VueJS Front-end, you must run:
+
 ```
 yarn install
 ```
@@ -54,6 +57,7 @@ yarn install
 3. Fill out the necessary information to connect to your PostgreSQL database.
 
 Edit config/database.yml and replace the username and password to access your local database.
+
 ```
 development:
   <<: *default
@@ -63,6 +67,7 @@ development:
 ```
 
 NOTE: If you would like to run the tests for the application, fill in the username and password sections in the test block as well.
+
 ```
 test:
   <<: *default
@@ -72,6 +77,7 @@ test:
 ```
 
 After setting up your configuration details, provision the database with the following command:
+
 ```
 rake db:setup
 ```
@@ -85,11 +91,13 @@ rails server
 ```
 
 Then start the Front-end dev server with:
+
 ```
 bin/webpack-dev-server
 ```
 
 4. You're all done! You can now access the application at the following url:
+
 ```
 http://localhost:3000
 ```
